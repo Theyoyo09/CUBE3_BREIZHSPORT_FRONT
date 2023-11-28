@@ -6,3 +6,8 @@ body {
     flex-direction: column;
     background-color: $bg_color;
 }
+.slick-prev:before, .slick-next:before{
+    color: black !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

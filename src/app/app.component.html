@@ -1,5 +1,50 @@
 <main class="main">
   <div class="content">
+    <!-- tabs.component.html -->
+    <mat-tab-group>
+      <!-- tab accueil / home -->
+      <mat-tab label="Breizhsport">
+        <!-- home page -->
+        <!-- carousel -->
+        <ngx-slick-carousel 
+          class="carousel" 
+          #slickModal="slick-carousel" 
+          [config]="slideConfig"> 
+          
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                  <img src="{{ slide.img }}" alt="" width="100%">
+            </div>
+
+        </ngx-slick-carousel>
+        <!--__________-->
+        <!--___________-->
+      </mat-tab>
+      <!-------------------------------------------------------------------------------------------------------->
+
+
+      <!-- tab catalogue -->
+
+      <mat-tab label="catalogue"><app-catalogue></app-catalogue></mat-tab>
+
+      <!-------------------------------------------------------------------------------------------------------->
+
+
+      <!-- tab catalogue -->
+
+      <mat-tab label="a-propos"><app-apropos></app-apropos></mat-tab>
+      
+      <!-------------------------------------------------------------------------------------------------------->
+
+
+      <!-- tab catalogue -->
+      
+      <mat-tab label="contact"><app-contact></app-contact></mat-tab>
+
+      <!-------------------------------------------------------------------------------------------------------->
+
+      <!-- Add more tabs as needed -->
+    </mat-tab-group>
+
   </div>
 </main>
 
