@@ -6,6 +6,11 @@ body {
     flex-direction: column;
     background-color: $bg_color;
 }
+
+.mat-mdc-tab-body-wrapper{
+    margin-top: 50px;
+}
+
 .slick-prev:before, .slick-next:before{
     color: black !important;
 }
