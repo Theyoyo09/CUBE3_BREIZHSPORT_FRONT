@@ -10,5 +10,5 @@ export class ConfigService {
     return this.http.get<Config>(this.configUrl);
   }*/
 
-  constructor() { }
+  constructor () {}
 }
