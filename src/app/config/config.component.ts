@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfigService } from "../config.service";
 
@@ -10,11 +10,20 @@ import { ConfigService } from "../config.service";
   styles: ''
 })
 export class ConfigComponent {
-  articles = [
-    {id: 666, nom: "Chaussette", prix: 2000000, quantité: 1, description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche", photo: "http://placehold.it/350x150/111111"},
-    {id: 999, nom: "l\'autre Chaussette", prix: 2000000, quantité: 1, description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche", photo: "http://placehold.it/350x150/333333"}
-  ];
-  static articles: any;
+  // @Input() articles = [
+  //   {id: 666, nom: "Chaussette", prix: 2000000, quantité: 1, description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche", photo: "http://placehold.it/350x150/111111"},
+  //   {id: 999, nom: "l\'autre Chaussette", prix: 2000000, quantité: 1, description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche", photo: "http://placehold.it/350x150/333333"}
+  // ];
+  
+  articleList: ConfigService[] = []; // Déclarez une liste de type Item
+
+  constructor() {
+    this.articleList.push(new ConfigService());
+    this.articleList.push(new ConfigService());
+  }
+
+  
+  
   /*constructor(private configService: ConfigService) {}
 
   showConfig() {
