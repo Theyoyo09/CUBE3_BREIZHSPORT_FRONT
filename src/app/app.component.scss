@@ -81,8 +81,27 @@ footer{
   display: flex;
   justify-content: center;
   flex-direction: row;
-  .columnLeft{}
-  .columnRight{}
+  gap: 2em;
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 4em;
+    list-style-type: none;
+    gap: 1em;
+    width: 20em;
+    li a{
+      text-decoration: none;
+      &:hover{
+        color: #0083FD;
+      }
+    }
+  }
+  h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
+  }
 }
 
 //responsive design
