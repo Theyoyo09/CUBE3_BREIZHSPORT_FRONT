@@ -22,5 +22,10 @@
         flex-wrap: wrap;
         justify-content: end;
       }
+      &:hover{
+        transform: scale3d(1.06, 1.06, 1);
+        transition-duration: 500ms;
+      }
+      transition-duration: 500ms;
     }
   }

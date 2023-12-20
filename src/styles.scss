@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/elements_variables.scss";
 
+.mat-mdc-tab-group {
+    width: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
