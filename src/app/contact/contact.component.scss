@@ -1,0 +1,43 @@
+.title{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 15em;
+    .columnLeft, .columnRight{
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        }
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        }
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        width: 25%;
+        height: fit-content;
+        top: 25%;
+        position: relative;
+        &:hover{
+            transform: scale3d(1.06, 1.06, 1);
+            transition-duration: 500ms;
+        }
+        transition-duration: 500ms;
+        h2{
+            margin-bottom: 20px;
+        }
+    }
+}
