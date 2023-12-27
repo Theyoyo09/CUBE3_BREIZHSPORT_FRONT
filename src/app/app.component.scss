@@ -12,10 +12,12 @@ main {
 
 .content {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 1000px;
-  margin-bottom: 3rem;
+  .sideButton{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    height: fit-content;
+  }
 }
 
 .carousel{

@@ -2,7 +2,13 @@
 @import "./app/elements_variables.scss";
 
 .mat-mdc-tab-group {
+    display: flex;
+    justify-content: center;
+    margin-left: 10rem;
     width: 100%;
+    max-width: 1000px !important;
+    margin-bottom: 3rem;
+
 }
 
 body {
