@@ -9,6 +9,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 //import la config de la liste d'objet
 import { ConfigComponent } from "./config/config.component";
@@ -25,7 +26,7 @@ import { articlesList } from './mock-articles';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatTabsModule, CatalogueComponent, ContactComponent, AproposComponent, SlickCarouselModule, MatCardModule, ConfigComponent, MatButtonModule],
+  imports: [CommonModule, RouterOutlet, MatTabsModule, CatalogueComponent, ContactComponent, AproposComponent, SlickCarouselModule, MatCardModule, ConfigComponent, MatButtonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
