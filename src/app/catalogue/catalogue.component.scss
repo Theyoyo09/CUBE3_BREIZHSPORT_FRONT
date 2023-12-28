@@ -20,7 +20,8 @@
       }
       .mat-mdc-card-actions {
         flex-wrap: wrap;
-        justify-content: end;
+        justify-content: space-between;
+        align-items: baseline;
       }
       &:hover{
         transform: scale3d(1.06, 1.06, 1);
