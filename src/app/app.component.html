@@ -3,53 +3,7 @@
     <!-- tabs.component.html -->
     <mat-tab-group>
       <!-- tab accueil / home -->
-      <mat-tab label="Breizhsport">
-        <!-- carousel -->
-        <ngx-slick-carousel 
-          class="carousel" 
-          #slickModal="slick-carousel" 
-          [config]="slideConfig"> 
-            <!-- test avec img mais changement avec une card-->
-            <div ngxSlickItem *ngFor="let slide of articlesList" class="slide">
-              <mat-card class="slideCard">
-                <div class="slideText">
-                  <mat-card-header>
-                    <mat-card-title>{{slide.nom}}</mat-card-title>
-                  </mat-card-header>
-                  <mat-card-content>
-                    <p>
-                      {{slide.description}}
-                    </p>
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <button mat-raised-button>voir article</button>
-                  </mat-card-actions>
-                </div>
-                <img class="slideImage" [src]= "slide.photo" alt="Photo of theo">
-              </mat-card>
-            </div>
-            <!------------------------------------------------>
-        </ngx-slick-carousel>
-        <!--__________-->
-
-        <div class="divProduits">
-          <mat-card *ngFor="let articles of articlesList" class="example-card">
-            <mat-card-header>
-              <mat-card-title> {{articles.nom}} </mat-card-title>
-            </mat-card-header>
-            <img mat-card-image [src]= "articles.photo" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                {{articles.description}} 
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>voir article</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-
-      </mat-tab>
+      <mat-tab label="Breizhsport"><app-home></app-home></mat-tab>
       <!-------------------------------------------------------------------------------------------------------->
 
 
@@ -76,24 +30,22 @@
     </mat-tab-group>
     <aside class="sideButton">
       <button mat-icon-button matTooltip="Basic" aria-label="Votre panier">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon routerLink="panier">shopping_cart</mat-icon>
       </button>
       <button mat-icon-button matTooltip="Basic" aria-label="Vos notifications">
         <mat-icon>notifications</mat-icon>
       </button>
       <mat-card-actions>
-        <button mat-button>connexion</button>
+        <button mat-button routerLink="login">connexion</button>
       </mat-card-actions>
     </aside>
   </div>
   <footer>
     <ul>
-      <li><a href="">Accueil</a></li>
-      <li><a href="">Catalogue</a></li>
-      <li><a href="">Profil</a></li>
-      <li><a href="">À propos</a></li>
-      <li><a href="">Contact</a></li>
-      <li><a href="">Mention légales</a></li>
+      <li><a routerLink="">Accueil</a></li>
+      <li><a routerLink="login">Profil</a></li>
+      <li><a routerLink="mention_legales">Mention légales</a></li>
+      <li><a routerLink="panier">votre panier</a></li>
     </ul>
     <h1>Breizhsport</h1>
   </footer>
