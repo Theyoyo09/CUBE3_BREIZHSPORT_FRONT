@@ -17,6 +17,12 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
+            <p>
+                {{ articles.prix }}
+            </p>
+            <!-- *ngIf="loggedIn; else anonymousUser"
+            <ng-template #anonymousUser>
+            </ng-template> -->
             <button mat-button>ajouter au panier</button>
         </mat-card-actions>
     </mat-card>
