@@ -10,7 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 
 //import des mocks
-import { articlesList } from '../models/mock-articles';
+import { articlesList } from '../mock/mock-articles';
 
 //import les component 
 import { CatalogueComponent } from '../catalogue/catalogue.component';

@@ -1,4 +1,4 @@
-import { articles, } from "../articles";
+import { articles } from "../models/articles";
 
 export const articlesList: articles[] = [
     {

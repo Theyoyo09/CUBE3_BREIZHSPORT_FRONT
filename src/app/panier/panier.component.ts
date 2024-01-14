@@ -7,7 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatPaginatorModule} from '@angular/material/paginator';
 //import des mocks
-import { articlesList } from '../models/mock-articles';
+import { articlesList } from '../mock/mock-articles';
 
 @Component({
   selector: 'app-panier',

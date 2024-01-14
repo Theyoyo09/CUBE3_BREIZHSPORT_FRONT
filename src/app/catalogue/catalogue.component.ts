@@ -9,7 +9,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 //import des mocks
-import { articlesList } from '../models/mock-articles';
+import { articlesList } from '../mock/mock-articles';
 
 @Component({
   selector: 'app-catalogue',
