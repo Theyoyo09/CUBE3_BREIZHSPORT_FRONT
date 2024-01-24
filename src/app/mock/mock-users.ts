@@ -1,11 +1,9 @@
-import { users } from "../models/users";
+import { user } from "../models/model_user";
 
-export const usersList: users[] = [
+export const usersList: user[] = [
     {
         id: 1,
         email: "test@test.test",
         password: "ptdrenclair"
     }
 ]
-
-export { users };
