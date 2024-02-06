@@ -1,1 +1,28 @@
-<p>profil works!</p>
+<div class="profilContent">
+    <div>
+        <h1>Changer votre email</h1>
+        <section>
+            <form [formGroup]="monFormulaire">
+                <div class="divEmail">
+                    <input type="email" formControlName="email" placeholder="{{ user.email }}" />
+                    <div *ngIf="email != null && email.invalid && (email.dirty || email.touched)" class="error-message">
+                    <p *ngIf="email.errors?.['required']">L'email est requis.</p>
+                    <p *ngIf="email.errors?.['email']">L'email n'est pas valide.</p>
+                    </div>
+                </div>
+                <button mat-button>ajouter au panier</button>
+              </form>
+        </section>
+    </div>
+    <div class="ListeCommandes"> 
+        <h1>Historique de commande</h1>
+        <mat-list>
+            <mat-list-item *ngFor="let commandes of historiqueCommandes; let i = index" [ngClass]="{'list-item-even': i % 2 === 0, 'list-item-odd': i % 2 !== 0}">
+                <span matListItemTitle>{{ commandes.id }}</span>
+                <span matListItemLine>{{ commandes.date.toDateString() }}</span>
+                <span matListItemLine>{{ getQuantiteArticles(commandes) }}</span>
+                <mat-icon matListIcon> {{ icon }} </mat-icon>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

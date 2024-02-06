@@ -1,0 +1,23 @@
+.profilContent{
+    width: -webkit-fill-available;
+    margin-top: 50px;
+    display: flex;
+    gap: 10em;
+    section{
+        form{
+            display: flex;
+            margin-bottom: 50px;
+            gap: 2em;
+            .error-message {
+                color: red;
+                margin-top: 5px;
+            }
+            input.ng-invalid {
+                border: 1px solid red;
+            }
+            .divEmail{
+                margin-top: 0.8em;
+            }
+        }
+    }
+}
