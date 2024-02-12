@@ -24,6 +24,16 @@ main {
     align-items: center;
     justify-content: start;
     height: fit-content;
+    .notifCenter{
+      display: none;
+      position: fixed;
+      top: 10%;
+      z-index: 5;
+      right: 9%;
+      .mat-mdc-list-item{
+        border-radius: 15px;
+      }
+    }
   }
 }
 

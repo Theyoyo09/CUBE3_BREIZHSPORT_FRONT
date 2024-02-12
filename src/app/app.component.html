@@ -10,7 +10,25 @@
       <button mat-icon-button matTooltip="Basic" aria-label="Votre panier" routerLink="/panier">
         <mat-icon>shopping_cart</mat-icon>
       </button>
-      <mat-icon class="notificationIcon">notifications</mat-icon>
+      <mat-icon matBadge="{{ nbrNotif }}" (mouseenter)="toggleDisplay(true)" (mouseleave)="toggleDisplay(false)" class="notificationIcon">notifications</mat-icon>
+      <!--  -->
+      <div class="notifCenter">
+        <mat-list>
+          <mat-list-item *ngFor="let notification of notifications; let i = index" [ngClass]="{'list-item-even': i % 2 === 0, 'list-item-odd-2': i % 2 !== 0}">
+              <span matListItemTitle>{{ notification.track_id }}</span>
+              <span matListItemLine>{{ notification.titre }}</span>
+              <span matListItemLine>{{ notification.dateTime.toDateString() }}</span>
+              <!-- <span ngSwitch="{{content}}">
+                <span matListItemLine *ngSwitchCase="notification.notification_type === 0">Nouvelle commande</span>
+                <span matListItemLine *ngSwitchCase="notification.notification_type === 1">Bonne nouvelle, votre colis vient d'être expédié !</span>
+                <span matListItemLine *ngSwitchCase="notification.notification_type === 2">Votre colis est arrivé en point relais</span>
+                <span matListItemLine *ngSwitchCase="notification.notification_type === 3">Votre colis est arrivé chez vous</span>
+                <span matListItemLine *ngSwitchDefault>notification</span>
+              </span> -->
+              <span matListItemLine>{{ notification.description }}</span>
+          </mat-list-item>
+      </mat-list>
+      </div>
       <mat-card-actions>
         <button mat-button routerLink="/login">connexion</button>
       </mat-card-actions>
@@ -19,4 +37,3 @@
   <!--- contenu de la page géré par le rooter -->
   <router-outlet></router-outlet>
 </main>
-
