@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./app/elements_variables.scss";
+
+.mat-mdc-tab-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px !important;
+    margin-bottom: 3rem;
+}
+
+.main{
+    min-height: 0 !important;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg_color;
+}
+
+.mat-mdc-tab-body-wrapper{
+    margin-top: 50px;
+}
+
+.slick-prev:before, .slick-next:before{
+    color: black !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-list{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    .mdc-list-item__content{
+        display: flex;
+        gap: 1em;
+        align-items: end;
+        .mat-mdc-list-item-unscoped-content{
+            display: flex;
+        }
+    }
+    
+    .list-item-even {
+        background-color: #f0f0f0 !important;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        width: fit-content;
+    }
+    
+    .list-item-odd {
+        background-color: #ffffff !important;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border: 1px solid black;
+        border-right: none;
+        border-left: none;
+        width: fit-content;
+    }
+
+    .list-item-odd-2 {
+        background-color: #ffffff !important;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        width: fit-content;
+    }
+}

@@ -1,0 +1,11 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    min-width: 30rem;
+    margin-top: 10rem;
+    mat-form-field{
+        width: -webkit-fill-available;
+    }
+}

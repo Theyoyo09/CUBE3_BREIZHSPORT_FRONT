@@ -1,0 +1,76 @@
+<!-- tabs.component.html -->
+<mat-tab-group>
+  <!-- tab accueil / home -->
+  <mat-tab label="Breizhsport">
+    <!-- carousel -->
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <!-- test avec img mais changement avec une card-->
+      <div ngxSlickItem *ngFor="let slide of articlesList" class="slide">
+        <mat-card class="slideCard">
+          <div class="slideText">
+            <mat-card-header>
+              <mat-card-title>{{ slide.nom }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                {{ slide.description }}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button>ajouter au panier</button>
+            </mat-card-actions>
+          </div>
+          <img class="slideImage" [src]="slide.photo" alt="Photo of theo" />
+        </mat-card>
+      </div>
+      <!------------------------------------------------>
+    </ngx-slick-carousel>
+    <!--__________-->
+
+    <div class="divProduits">
+      <mat-card *ngFor="let articles of articlesList" class="example-card">
+        <mat-card-header>
+          <mat-card-title> {{ articles.nom }} </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="articles.photo" alt="Photo of a Shiba Inu" />
+        <mat-card-content>
+          <p>
+            {{ articles.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <p>
+            {{ articles.prix }}
+          </p>
+          <!-- *ngIf="loggedIn; else anonymousUser"
+          <ng-template #anonymousUser>
+          </ng-template> -->
+          <button mat-button>ajouter au panier</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <!-------------------------------------------------------------------------------------------------------->
+
+  <!-- tab catalogue -->
+
+  <mat-tab label="Catalogue"><app-catalogue></app-catalogue></mat-tab>
+
+  <!-------------------------------------------------------------------------------------------------------->
+
+  <!-- tab catalogue -->
+
+  <mat-tab label="À propos"><app-apropos></app-apropos></mat-tab>
+
+  <!-------------------------------------------------------------------------------------------------------->
+
+  <!-- tab catalogue -->
+
+  <mat-tab label="Contact"><app-contact></app-contact></mat-tab>
+
+  <!-------------------------------------------------------------------------------------------------------->
+</mat-tab-group>
