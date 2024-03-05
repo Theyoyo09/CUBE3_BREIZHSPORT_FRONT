@@ -1,13 +1,6 @@
 import * as mongoose from 'mongoose';
+import { Commande } from "./model_commande";
 
-const commandeSchema = new mongoose.Schema({
-  idUser: String,
-  phoneNumber: String,
-  email: String,
-  listArticles: [],
-  statusCommande: Boolean,
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now}
-});
+const commandeSchema = new mongoose.Schema<Commande>;
 
-export const Commande = mongoose.model('Commande', commandeSchema);
+export const CommandeModel = mongoose.model('Commande', commandeSchema);
