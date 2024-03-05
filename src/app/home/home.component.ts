@@ -37,7 +37,7 @@ export class HomeComponent {
   } 
   articlesList = articlesList
   ngOnInit(): void {
-    console.log(articlesList);
+    //console.log(articlesList);
   }
 
 }
