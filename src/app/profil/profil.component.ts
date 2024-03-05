@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { CommandeService } from "../services/commande.service";
-import { Commande } from "../models/model_commandes";
+import { Commande } from "../models/model_commande";
 import { usersList } from "../mock/mock-users";
 
 
@@ -26,7 +26,7 @@ export class ProfilComponent implements OnInit {
   moi: number = 2
   icon: string = "close"
   user = usersList[0]
-  commandes : typeof Commande[] = [];
+  commandes : Commande[] = [];
 
   getQuantiteArticles(commandes: { tableau_articles: any[]; }): number {
     return commandes.tableau_articles.reduce((total, article) => total + article.quantite, 0);
@@ -49,7 +49,7 @@ export class ProfilComponent implements OnInit {
     this.commandeService.getAllCommandes(idUser)
     .subscribe((data)=>{
       this.commandes = data;
-      console.log("les commandes", this.commandes.map((commande) => console.log(commande)));
+      console.log("les commandes", this.commandes);
     })
   }
 }

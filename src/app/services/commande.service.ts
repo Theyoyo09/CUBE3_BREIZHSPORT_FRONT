@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Commande } from "../models/model_commandes";
+import { Commande } from "../models/model_commande";
 
 @Injectable({
     providedIn: 'root'
@@ -12,14 +12,14 @@ export class CommandeService {
 
     constructor(private http: HttpClient) {}
 
-    getAllCommandes(idUser: string): Observable< typeof Commande[] > {
+    getAllCommandes(idUser: string): Observable< Commande[] > {
         const url = `${this.apiUrl}/${idUser}`;
-        return this.http.get< typeof Commande[] >(url);
+        return this.http.get<Commande[]>(url);
     }
 
-    addCommande(commande: typeof Commande): Observable<typeof Commande> {
+    addCommande(commande: Commande): Observable<Commande> {
         console.log(commande);
-        return this.http.post<typeof Commande>(this.apiUrl, commande);
+        return this.http.post<Commande>(this.apiUrl, commande);
     }
 
     deleteCommande(idCommande: string): Observable<void> {

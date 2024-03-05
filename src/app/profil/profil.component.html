@@ -18,7 +18,7 @@
         <h1>Historique de commande</h1>
         <mat-list>
             <mat-list-item *ngFor="let commande of commandes; let i = index" [ngClass]="{'list-item-even': i % 2 === 0, 'list-item-odd': i % 2 !== 0}">
-                <span matListItemLine>commande du {{ commande }}</span>
+                <span matListItemLine>commande du {{ commande.createdAt }}</span>
                 <mat-icon matListIcon> {{ icon }} </mat-icon>
             </mat-list-item>
         </mat-list>
