@@ -6,7 +6,7 @@ enum notification_type{
 }
 
 export class notification {
-    user_id!: number;
+    idUser!: string;
     command_id!: number;
     track_id!: string;
     email!: string;
