@@ -50,6 +50,6 @@ export class ProfilComponent implements OnInit {
     .subscribe((data)=>{
       this.commandes = data;
       console.log("les commandes", this.commandes);
-    })
+    });
   }
 }
