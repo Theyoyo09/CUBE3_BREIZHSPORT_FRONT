@@ -1,1 +1,39 @@
-<p>notification works!</p>
+<!-- <mat-icon matBadge="{{ nbrNotif }}" (mouseenter)="toggleDisplay(true)" (mouseleave)="toggleDisplay(false)" class="notificationIcon">notifications</mat-icon> -->
+<mat-icon
+  matBadge="{{ nbrNotif }}"
+  class="notificationIcon"
+  data-bs-toggle="dropdown"
+>
+  notifications
+</mat-icon>
+<ul class="dropdown-menu">
+  <mat-list>
+    <div *ngIf="!isServiceAvailable; else notification_content">
+      <mat-list-item>
+        <div class="alert alert-danger mb-0">
+          <strong>Oups!</strong> Service momentanément indisponible, veuillez
+          réessayer ultérieurement.
+        </div>
+      </mat-list-item>
+    </div>
+    <ng-template #notification_content>
+      <div *ngIf="notifications.length == 0; else multiple_notification">
+        <mat-list-item>
+          <div class="alert alert-success mb-0">Aucune notification</div>
+        </mat-list-item>
+      </div>
+      <ng-template #multiple_notification>
+        <mat-list-item
+          class="dropdown-item"
+          *ngFor="let notification of notifications"
+          (click)="setSeen(notification.orderId, notification.type)"
+        >
+          <span matListItemTitle>{{ notification.title }}</span>
+          <span matListItemLine>#{{ notification.orderId }}</span>
+          <span matListItemLine>{{ notification.date }}</span>
+          <span matListItemLine>{{ notification.description }}</span>
+        </mat-list-item>
+      </ng-template>
+    </ng-template>
+  </mat-list>
+</ul>
