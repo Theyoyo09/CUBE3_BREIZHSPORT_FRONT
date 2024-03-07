@@ -23,8 +23,6 @@ import { usersList } from "../mock/mock-users";
 
 
 export class ProfilComponent implements OnInit {
-  moi: number = 2
-  icon: string = "close"
   user = usersList[0]
   commandes : Commande[] = [];
 

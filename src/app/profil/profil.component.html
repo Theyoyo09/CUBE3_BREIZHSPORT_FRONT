@@ -10,7 +10,7 @@
                     <p *ngIf="email.errors?.['email']">L'email n'est pas valide.</p>
                     </div>
                 </div>
-                <button mat-button>ajouter au panier</button>
+                <button mat-button>modifier votre email</button>
               </form>
         </section>
     </div>
@@ -18,8 +18,9 @@
         <h1>Historique de commande</h1>
         <mat-list>
             <mat-list-item *ngFor="let commande of commandes; let i = index" [ngClass]="{'list-item-even': i % 2 === 0, 'list-item-odd': i % 2 !== 0}">
-                <span matListItemLine>commande du {{ commande.createdAt }}</span>
-                <mat-icon matListIcon> {{ icon }} </mat-icon>
+                <span matListItemLine>commande du {{ commande.createdAt | date:'medium' }}</span>
+                <mat-icon matListIcon *ngIf="commande.statusCommande === 'livré' "> check </mat-icon>
+                <mat-icon matListIcon *ngIf="commande.statusCommande !== 'livré' "> close </mat-icon>
             </mat-list-item>
         </mat-list>
     </div>
