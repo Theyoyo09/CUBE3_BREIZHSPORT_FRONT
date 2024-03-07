@@ -45,7 +45,7 @@ export class PanierComponent implements OnInit {
       phoneNumber: formData.phoneNumber,
       email: formData.email,
       listArticles: [],
-      statusCommande: false,
+      statusCommande: "false",
       createdAt: new Date(),
       updatedAt: new Date()
     };

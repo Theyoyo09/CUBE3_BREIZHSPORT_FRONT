@@ -3,7 +3,7 @@ export interface Commande{
     phoneNumber: String,
     email: String,
     listArticles: [],
-    statusCommande: Boolean,
+    statusCommande: string,
     createdAt: Date,
     updatedAt:  Date
 }
