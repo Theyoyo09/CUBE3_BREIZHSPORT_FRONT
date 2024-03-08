@@ -1,7 +1,9 @@
-import { articles } from "./model_article";
-
-export class commande {
-    id!: number;
-    date!: Date;
-    tableau_articles!: articles[];
+export interface Commande{
+    idUser: String,
+    phoneNumber: String,
+    email: String,
+    listArticles: [],
+    statusCommande: string,
+    createdAt: Date,
+    updatedAt:  Date
 }

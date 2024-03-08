@@ -41,4 +41,9 @@
     align-items: center;
     flex-direction: column;
     width: -webkit-fill-available;
+    #valideCommande{
+      display: none;
+      justify-content: center;
+      flex-direction: column;
+    }
 }

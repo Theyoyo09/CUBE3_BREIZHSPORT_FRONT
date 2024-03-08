@@ -14,6 +14,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { HomeComponent } from "./home/home.component";
 import { PanierComponent } from './panier/panier.component';
 import { notificationList } from './mock/mock-notifications';
+import { HttpClientModule } from '@angular/common/http';
 // import { login } from './login/login.component';
 
 @Component({
@@ -21,7 +22,7 @@ import { notificationList } from './mock/mock-notifications';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, RouterOutlet, ConfigComponent, PanierComponent, HomeComponent, MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatBadgeModule]
+    imports: [CommonModule, RouterOutlet, ConfigComponent, PanierComponent, HomeComponent, MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatBadgeModule, HttpClientModule]
 })
 
 export class AppComponent {

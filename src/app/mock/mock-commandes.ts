@@ -1,6 +1,6 @@
-import { commande } from "../models/model_commande";
+import { Commande } from "../models/model_commandes";
 
-export const historique_commandes: commande[] = [
+/* export const historique_commandes: typeof Commande[] = [
     {
         id: 10,
         date: new Date(20240101),
@@ -91,4 +91,4 @@ export const historique_commandes: commande[] = [
             }
         ]
     }
-]
+] */

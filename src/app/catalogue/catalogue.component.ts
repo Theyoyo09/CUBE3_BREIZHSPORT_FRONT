@@ -22,7 +22,7 @@ export class CatalogueComponent implements OnInit {
   articlesList = articlesList
   totalArticle = articlesList.length
   ngOnInit(): void {
-    console.log(articlesList);
+    //console.log(articlesList);
   }
 }
 // export class PaginatorConfigurableExample {
