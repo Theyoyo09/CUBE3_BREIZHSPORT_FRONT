@@ -1,6 +1,6 @@
-import { articles } from "../models/model_article";
+/* import { Article } from "../models/model_article";
 
-export const articlesList: articles[] = [
+export const articlesList: Article[] = [
     {
         id: 7,
         nom: "Chaussette",
@@ -74,3 +74,4 @@ export const articlesList: articles[] = [
         photo: "./assets/images/theoVoyage.png"
     },
 ]
+ */

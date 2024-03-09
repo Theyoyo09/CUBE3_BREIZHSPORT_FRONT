@@ -8,7 +8,7 @@ import { Commande } from "../models/model_commande";
 })
 
 export class CommandeService {
-    private apiUrl = 'http://localhost:3000/api/cmd';
+    private apiUrl = 'https://app-7e78b033-20d8-45a5-908b-e90dee9e7060.cleverapps.io/api/cmd';
 
     constructor(private http: HttpClient) {}
 
