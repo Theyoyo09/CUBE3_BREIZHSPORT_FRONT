@@ -1,28 +1,81 @@
-import { Component, ElementRef, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NotificationService } from './notification.service';
 import { Notification } from './notification';
-import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatBadgeModule, MatListModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatBadgeModule,
+    MatTableModule,
+    MatButtonModule,
+  ],
   providers: [NotificationService],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.scss',
 })
 export class NotificationComponent implements OnInit {
-  constructor(private notificationService: NotificationService) {}
+  constructor(
+    private notificationService: NotificationService,
+    private elementRef: ElementRef
+  ) {}
 
   notifications: Notification[] = [];
   nbrNotif: any = this.notifications.length;
   isServiceAvailable: boolean = true;
+  isDisplayed: boolean = false;
+  isClickInside: boolean = false;
+
+  displayedColumns: string[] = [
+    'orderId',
+    'date',
+    'title',
+    'description',
+    'actions',
+  ];
 
   ngOnInit() {
     this.getNotifications();
+  }
+
+  @HostListener('click')
+  clicked() {
+    this.isClickInside = true;
+  }
+
+  @HostListener('document:click')
+  clickedOut() {
+    if (this.isDisplayed && !this.isClickInside) {
+      this.toggleDisplay();
+    }
+    this.isClickInside = false;
+  }
+
+  toggleDisplay(): void {
+    if (
+      this.notifications.length !== 0 ||
+      this.isDisplayed ||
+      !this.isServiceAvailable
+    ) {
+      this.isDisplayed = !this.isDisplayed;
+      const notifDialog: HTMLCollectionOf<Element> =
+        this.elementRef.nativeElement.getElementsByClassName('notifCenter');
+      for (let i = 0; i < notifDialog.length; i++) {
+        const element = notifDialog[i] as HTMLElement;
+        console.log(element);
+        if (this.isDisplayed) {
+          element.style.display = 'flex';
+        } else {
+          element.style.display = 'none';
+        }
+      }
+    }
   }
 
   setSeen(orderId: string, type: string): void {
@@ -39,9 +92,11 @@ export class NotificationComponent implements OnInit {
         console.log('load notifications ', res);
         this.notifications = res;
         this.nbrNotif = res.length;
+        if (this.notifications.length == 0) {
+          this.toggleDisplay();
+        }
       },
       error: () => {
-        console.log('not available');
         this.isServiceAvailable = false;
       },
       complete: () => {},
