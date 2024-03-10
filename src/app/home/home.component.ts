@@ -49,9 +49,13 @@ export class HomeComponent {
     "infinite": true,
   };
 
-  addToPanier(idUser: string, idArticle: string, quantite: number) {
-    const panierData: PanierData = { idUser, idArticle, quantite };
-    this.panierService.addArticleToPanier(panierData)
+  quantite : number = 0;
+
+  addToPanier(idUser: string, idArticle: string) {
+    this.quantite = Math.floor(Math.random() * (50 - 1)) + 1;
+    const panierData: PanierData = { idUser, idArticle, quantite : this.quantite };
+    console.log(panierData);
+     this.panierService.addArticleToPanier(panierData)
       .subscribe(result => {
         if (result) {
           console.log('Article ajouté au panier avec succès !');

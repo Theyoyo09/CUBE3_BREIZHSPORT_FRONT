@@ -18,8 +18,8 @@ export class PanierService {
         return this.http.get<Panier>(url);
     };
 
-    addArticleToPanier(panierData: PanierData): Observable<PanierData> {
-        const url = `${this.apiUrl}/AddArticleToPanier`;
-        return this.http.post<PanierData>(url, panierData);
+    addArticleToPanier(panierData: PanierData): Observable<boolean> {
+        const url = `${this.apiUrl}/AddArticleToPanier?iduser=${panierData.idUser}&idarticle=${panierData.idArticle}&quantite=${panierData.quantite}`;
+        return this.http.post<boolean>(url, null);
     };
 };
