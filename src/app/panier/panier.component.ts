@@ -42,7 +42,7 @@ export class PanierComponent implements OnInit {
   valideCommande(commandeForm: NgForm) {
     if (commandeForm.invalid) {
       return;
-    }
+    };
 
     const formData = commandeForm.value;
 
@@ -61,7 +61,7 @@ export class PanierComponent implements OnInit {
       error(err){ return console.error('Erreur lors de l\'ajout de la commande :', err) },
       complete(){ return console.log('commande ajoutée go back to home'); }
     });
-  }
+  };
 
   ngOnInit(): void {
     const idUser = this.user
@@ -70,8 +70,8 @@ export class PanierComponent implements OnInit {
       this.panierUser = data.listArticles;
       console.log("tous les articles du panier", data, idUser);
       this.panierUser.forEach(element => {
-        this.prix += element.prix;
+        this.prix += (element.prix * element.quantite);
       });
     });
-  }
+  };
 }
