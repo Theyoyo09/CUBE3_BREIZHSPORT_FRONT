@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/elements_variables.scss";
 
+.ng-star-inserted {
+    width: -webkit-fill-available;
+}
+
 .mat-mdc-tab-group {
     display: flex;
     justify-content: center;
