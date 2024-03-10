@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Panier } from "../models/model_panier";
+import { PanierData } from "../models/model_panier_data";
 
 @Injectable({
     providedIn: 'root'
@@ -15,5 +16,10 @@ export class PanierService {
     Read(idUser : string): Observable< Panier > {
         const url = `${this.apiUrl}/GetPanier?iduser=${idUser}`;
         return this.http.get<Panier>(url);
-    }
+    };
+
+    addArticleToPanier(panierData: PanierData): Observable<PanierData> {
+        const url = `${this.apiUrl}/AddArticleToPanier`;
+        return this.http.post<PanierData>(url, panierData);
+    };
 };

@@ -20,6 +20,9 @@ import { AproposComponent } from '../apropos/apropos.component';
 import { PanierComponent } from '../panier/panier.component';
 import { Article } from '../models/model_article';
 import { HttpClientModule } from '@angular/common/http';
+import { Panier } from '../models/model_panier';
+import { PanierData } from '../models/model_panier_data';
+import { PanierService } from '../services/panier.service';
 // import { login } from './login/login.component';
 
 @Component({
@@ -35,7 +38,7 @@ export class HomeComponent {
 
   articlesList : Article[] = [];
 
-  constructor(private articleService: ArticleService) {}
+  constructor(private articleService: ArticleService, private panierService : PanierService) {}
 
   slideConfig = {
     "slidesToShow": 1,
@@ -46,12 +49,24 @@ export class HomeComponent {
     "infinite": true,
   };
 
+  addToPanier(idUser: string, idArticle: string, quantite: number) {
+    const panierData: PanierData = { idUser, idArticle, quantite };
+    this.panierService.addArticleToPanier(panierData)
+      .subscribe(result => {
+        if (result) {
+          console.log('Article ajouté au panier avec succès !');
+        } else {
+          console.error('Une erreur s\'est produite lors de l\'ajout de l\'article au panier.');
+        }
+      });
+  }
+
   ngOnInit(): void {
     //console.log(articlesList);
     this.articleService.ReadALLArticle()
     .subscribe((data)=>{
       this.articlesList = data;
-      console.log("tous les articles", this.articleService);
+      console.log("tous les articles", this.articlesList);
     });
   }
 
