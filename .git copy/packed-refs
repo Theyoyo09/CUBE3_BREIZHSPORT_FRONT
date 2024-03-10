@@ -1,0 +1,8 @@
+# pack-refs with: peeled fully-peeled sorted 
+9cd73d820e29ecdbf82d30fa47246bdb3638e191 refs/remotes/origin/CommandeService
+92241e260e7f3ecfe773e82a32745f3e4175f3d9 refs/remotes/origin/Deploy
+9bc859dd337e12159f1ee9a60ef85bf4b61f171d refs/remotes/origin/dev
+7d6c7a0c896bc21418cc0704cad97349e090f113 refs/remotes/origin/feature/API-NOTIFICATION
+0fe5fb89df3a65be970ea6e45a97909b9d5a114e refs/remotes/origin/login_profil
+36aba60942bea1a7ca306bdb250483b20a1482f8 refs/remotes/origin/main
+ff6f273318c75a1f031c472fdc2f59fac6f587cb refs/remotes/origin/panier
