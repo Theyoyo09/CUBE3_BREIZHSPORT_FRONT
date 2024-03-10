@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 //import la config de la liste d'objet
 import { ConfigComponent } from './config/config.component';
@@ -36,10 +36,25 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     NotificationComponent,
     HttpClientModule,
+    RouterLinkActive
   ],
   providers: [NotificationService, HttpClientModule],
 })
+
 export class AppComponent {
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private router: Router) {}
   title = 'CUBE3_BREIZHSPORT_FRONT';
+
+  redirectToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  redirectToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  redirectToPanier() {
+    this.router.navigate(['/panier']);
+  }
+
 }

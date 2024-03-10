@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 //import des elements de material
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -16,10 +17,11 @@ import { PanierService } from '../services/panier.service';
 import { usersList } from '../mock/mock-users';
 import { Panier } from '../models/model_panier';
 
+
 @Component({
   selector: 'app-panier',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatTabsModule, MatButtonModule, MatChipsModule, MatPaginatorModule, FormsModule, MatInputModule],
+  imports: [CommonModule, MatCardModule, MatTabsModule, MatButtonModule, MatChipsModule, MatPaginatorModule, FormsModule, MatInputModule, RouterOutlet],
   templateUrl: './panier.component.html',
   styleUrl: './panier.component.scss'
 })

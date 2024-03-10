@@ -1,7 +1,7 @@
 <main class="main">
   <div class="headerContent">
     <div class="logoDiv">
-      <button mat-button routerLink="/">
+      <button mat-button (click)="redirectToHome()">
         <h1>Breizhsport</h1>
       </button>
       <mat-icon>help</mat-icon>
@@ -11,13 +11,13 @@
         mat-icon-button
         matTooltip="Basic"
         aria-label="Votre panier"
-        routerLink="/panier"
+        (click)="redirectToPanier()"
       >
         <mat-icon>shopping_cart</mat-icon>
       </button>
       <app-notification />
       <mat-card-actions>
-        <button mat-button routerLink="/login">connexion</button>
+        <button mat-button (click)="redirectToLogin()">connexion</button>
       </mat-card-actions>
     </aside>
   </div>
