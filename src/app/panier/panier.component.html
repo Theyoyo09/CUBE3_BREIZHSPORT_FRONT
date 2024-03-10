@@ -4,7 +4,6 @@
             <mat-card-header>
                 <mat-card-title> {{articles.nom}} </mat-card-title>
             </mat-card-header>
-            <img mat-card-image [src]= "articles.photo" alt="Photo of a Shiba Inu">
             <mat-card-content>
                 <p>
                     {{articles.description}} 
@@ -12,7 +11,8 @@
             </mat-card-content>
             <mat-card-actions>
                 <p>
-                    {{ articles.prix }}
+                    prix : {{ articles.prix }} € <br>
+                    quantité : {{ articles.quantite }}
                 </p>
                 <!-- *ngIf="loggedIn; else anonymousUser"
                 <ng-template #anonymousUser>
@@ -39,3 +39,4 @@
         </form>
     </div>
 </div>
+<router-outlet></router-outlet>
