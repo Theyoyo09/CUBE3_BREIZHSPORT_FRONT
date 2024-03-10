@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListItem } from '@angular/material/list';
 @Component({
   selector: 'app-notification',
   standalone: true,
@@ -15,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatBadgeModule,
     MatTableModule,
     MatButtonModule,
+    MatListItem
   ],
   providers: [NotificationService],
   templateUrl: './notification.component.html',
