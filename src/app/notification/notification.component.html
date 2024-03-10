@@ -1,39 +1,59 @@
-<!-- <mat-icon matBadge="{{ nbrNotif }}" (mouseenter)="toggleDisplay(true)" (mouseleave)="toggleDisplay(false)" class="notificationIcon">notifications</mat-icon> -->
-<mat-icon
-  matBadge="{{ nbrNotif }}"
-  class="notificationIcon"
-  data-bs-toggle="dropdown"
->
-  notifications
-</mat-icon>
-<ul class="dropdown-menu">
-  <mat-list>
-    <div *ngIf="!isServiceAvailable; else notification_content">
-      <mat-list-item>
-        <div class="alert alert-danger mb-0">
-          <strong>Oups!</strong> Service momentanément indisponible, veuillez
-          réessayer ultérieurement.
-        </div>
-      </mat-list-item>
+<button mat-icon-button matTooltip="Basic" (click)="toggleDisplay()">
+  <mat-icon matBadge="{{ nbrNotif }}" class="notificationIcon">
+    notifications
+  </mat-icon>
+</button>
+<div class="notifCenter">
+  <div *ngIf="!isServiceAvailable; else notification_content">
+    <div class="alert alert-danger mb-0">
+      <strong>Oups!</strong> Service momentanément indisponible, veuillez
+      réessayer ultérieurement.
     </div>
-    <ng-template #notification_content>
-      <div *ngIf="notifications.length == 0; else multiple_notification">
-        <mat-list-item>
-          <div class="alert alert-success mb-0">Aucune notification</div>
-        </mat-list-item>
-      </div>
-      <ng-template #multiple_notification>
-        <mat-list-item
-          class="dropdown-item"
-          *ngFor="let notification of notifications"
-          (click)="setSeen(notification.orderId, notification.type)"
-        >
-          <span matListItemTitle>{{ notification.title }}</span>
-          <span matListItemLine>#{{ notification.orderId }}</span>
-          <span matListItemLine>{{ notification.date }}</span>
-          <span matListItemLine>{{ notification.description }}</span>
-        </mat-list-item>
-      </ng-template>
-    </ng-template>
-  </mat-list>
-</ul>
+  </div>
+  <ng-template #notification_content>
+    <table mat-table [dataSource]="notifications" class="mat-elevation-z8">
+      <ng-container matColumnDef="orderId">
+        <th mat-header-cell *matHeaderCellDef>Commande</th>
+        <td mat-cell *matCellDef="let element">N°{{ element.orderId }}</td>
+      </ng-container>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Titre</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell *matCellDef="let notification">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="setSeen(notification.orderId, notification.type)"
+          >
+            <mat-icon class="visibilityIcon" data-bs-toggle="dropdown">
+              visibility
+            </mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <mat-list-item
+        class="dropdown-item"
+        *ngFor="let notification of notifications"
+      >
+        <span matListItemTitle>{{ notification.title }}</span>
+        <span matListItemLine>#{{ notification.orderId }}</span>
+        <span matListItemLine>{{ notification.date }}</span>
+        <span matListItemLine>{{ notification.description }}</span>
+      </mat-list-item>
+    </table>
+  </ng-template>
+</div>
