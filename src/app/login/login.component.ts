@@ -39,9 +39,7 @@ export class LoginComponent implements OnInit {
       this._auth.loginUser(emailValue, passwordValue)
         .subscribe({
           next: (res) => {
-            if (this.result) {
-              this.redirectToProfil();
-            }
+            this.redirectToProfil();
             console.log(res);
           },
           error: (err) => {
