@@ -1,0 +1,14 @@
+.notifCenter{
+    display: none;
+    position: absolute;
+    top: 4%;
+    z-index: 5;
+    right: 0%;
+    .mat-mdc-list-item{
+      border-radius: 15px;
+    }
+}
+
+.mat-mdc-raised-button>.mat-icon{
+  margin:auto;
+}

@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/elements_variables.scss";
 
+.ng-star-inserted {
+    width: -webkit-fill-available;
+}
+
 .mat-mdc-tab-group {
     display: flex;
     justify-content: center;
@@ -48,6 +52,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         width: fit-content;
+        height: 45px !important;
     }
     
     .list-item-odd {
@@ -58,6 +63,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         border-right: none;
         border-left: none;
         width: fit-content;
+        height: 45px !important;
     }
 
     .list-item-odd-2 {

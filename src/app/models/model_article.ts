@@ -1,8 +1,8 @@
-export class articles {
-    id!: number;
+export class Article {
+    id!: string;
     nom!: string;
     prix!: number;
     quantite!: number;
     description!: string;
-    photo!: string;
+    image!: string;
 }

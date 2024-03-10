@@ -1,13 +1,13 @@
-import { articles } from "../models/model_article";
+/* import { Article } from "../models/model_article";
 
-export const articlesList: articles[] = [
+export const articlesList: Article[] = [
     {
         id: 7,
         nom: "Chaussette",
         prix: 2000000,
         quantite: 1,
         description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche",
-        photo: "../assets/images/Capture d'écran 2023-05-12 140359.png"
+        photo: "./assets/images/Capture d'écran 2023-05-12 140359.png"
     },
     {
         id: 999, 
@@ -15,7 +15,7 @@ export const articlesList: articles[] = [
         prix: 2000000, 
         quantite: 1, 
         description: "les chaussettes de l\'archiduchesse sont-elles seche archi seche", 
-        photo: "../assets/images/Capture d'écran 2023-11-13 113539.png"
+        photo: "./assets/images/Capture d'écran 2023-11-13 113539png"
     },
     {
         id: 911,
@@ -23,7 +23,7 @@ export const articlesList: articles[] = [
         prix: 911,
         quantite: 2,
         description: "ça passe pas",
-        photo: "../assets/images/911.png"
+        photo: "./assets/images/911.png"
     },
     {
         id: 404,
@@ -31,7 +31,7 @@ export const articlesList: articles[] = [
         prix: 150,
         quantite: 1,
         description: "les meilleur parapluies de ta région",
-        photo: "../assets/images/IMG4981.png"
+        photo: "./assets/images/IMG4981.png"
     },
     {
         id: 501,
@@ -39,7 +39,7 @@ export const articlesList: articles[] = [
         prix: 60000000,
         quantite: 1,
         description: "voyage tous frais payer",
-        photo: "../assets/images/laBonneEpoque.png"
+        photo: "./assets/images/laBonneEpoque.png"
     },
     {
         id: 30,
@@ -47,7 +47,7 @@ export const articlesList: articles[] = [
         prix: 1974,
         quantite: 189,
         description: "terrain constructible",
-        photo: "../assets/images/laPetiteTheoDansLaPrairie.png"
+        photo: "./assets/images/laPetiteTheoDansLaPrairie.png"
     },
     {
         id: 24,
@@ -55,7 +55,7 @@ export const articlesList: articles[] = [
         prix: 49,
         quantite: 1,
         description: "mais theo",
-        photo: "../assets/images/theoMetheo.png"
+        photo: "./assets/images/theoMetheo.png"
     },
     {
         id: 666,
@@ -63,7 +63,7 @@ export const articlesList: articles[] = [
         prix: 2000000,
         quantite: 1,
         description: "le canapé est à vendre aussi",
-        photo: "../assets/images/theoParadis.png"
+        photo: "./assets/images/theoParadis.png"
     },
     {
         id: 1,
@@ -71,6 +71,7 @@ export const articlesList: articles[] = [
         prix: 194,
         quantite: 1,
         description: "visiter tous les pays du monde",
-        photo: "../assets/images/theoVoyage.png"
+        photo: "./assets/images/theoVoyage.png"
     },
 ]
+ */

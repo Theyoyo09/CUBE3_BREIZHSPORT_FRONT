@@ -20,11 +20,8 @@
                 {{ slide.description }}
               </p>
             </mat-card-content>
-            <mat-card-actions>
-              <button mat-raised-button>ajouter au panier</button>
-            </mat-card-actions>
           </div>
-          <img class="slideImage" [src]="slide.photo" alt="Photo of theo" />
+          <img class="slideImage" [src]="slide.image"/>
         </mat-card>
       </div>
       <!------------------------------------------------>
@@ -36,7 +33,7 @@
         <mat-card-header>
           <mat-card-title> {{ articles.nom }} </mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="articles.photo" alt="Photo of a Shiba Inu" />
+        <img mat-card-image [src]="articles.image"/>
         <mat-card-content>
           <p>
             {{ articles.description }}
@@ -44,12 +41,13 @@
         </mat-card-content>
         <mat-card-actions>
           <p>
-            {{ articles.prix }}
+            {{ articles.prix }} €
           </p>
           <!-- *ngIf="loggedIn; else anonymousUser"
           <ng-template #anonymousUser>
           </ng-template> -->
-          <button mat-button>ajouter au panier</button>
+          <!--CTA addToPanier(idUser : string, idArticles : string, quantite : number)-->
+          <button mat-button (click)="addToPanier('1', articles.id)">ajouter au panier</button>
         </mat-card-actions>
       </mat-card>
     </div>

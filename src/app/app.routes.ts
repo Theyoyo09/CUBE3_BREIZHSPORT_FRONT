@@ -9,12 +9,12 @@ import { ProfilComponent } from './profil/profil.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent},
-    { path: 'not_found', component: NotFoundComponent},
     { path: 'login', component:  LoginComponent},
     { path: 'panier', component: PanierComponent},
     { path: 'mention_legales', component: MentionLegalesComponent},
     { path: 'profil', component: ProfilComponent},
-    { path: '**', redirectTo: '/home'}
+    { path: '',   redirectTo: '/home', pathMatch: 'full' },
+    { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

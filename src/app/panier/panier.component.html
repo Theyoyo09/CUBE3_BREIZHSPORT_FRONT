@@ -1,10 +1,9 @@
 <div class="panierContent">
     <div class="divProduits">
-        <mat-card *ngFor="let articles of articlesList" class="example-card">
+        <mat-card *ngFor="let articles of panierUser" class="example-card">
             <mat-card-header>
                 <mat-card-title> {{articles.nom}} </mat-card-title>
             </mat-card-header>
-            <img mat-card-image [src]= "articles.photo" alt="Photo of a Shiba Inu">
             <mat-card-content>
                 <p>
                     {{articles.description}} 
@@ -12,7 +11,8 @@
             </mat-card-content>
             <mat-card-actions>
                 <p>
-                    {{ articles.prix }}
+                    prix : {{ articles.prix }} € <br>
+                    quantité : {{ articles.quantite }}
                 </p>
                 <!-- *ngIf="loggedIn; else anonymousUser"
                 <ng-template #anonymousUser>
@@ -23,6 +23,20 @@
     </div>
     <div class="paiementDIV">
         <p>{{prix}}€ TTC</p>
-        <button mat-button class="paiementCTA">valider votre paiement</button>
+        <button mat-button (click)="displayCommande()" class="paiementCTA">valider votre paiement</button>
+
+        <form id="valideCommande" #commandeForm="ngForm" (ngSubmit)="valideCommande(commandeForm)">
+            <mat-form-field class="formCmdFields">
+                <mat-label for="phone">Votre téléphone :</mat-label>
+                <input matInput type="text" id="phone" name="phoneNumber" ngModel>
+            </mat-form-field>
+        
+            <mat-form-field class="formCmdFields">
+                <mat-label for="email">Votre Email:</mat-label>
+                <input matInput type="email" id="email" name="email" ngModel required>
+            </mat-form-field>
+            <button mat-button type="submit">Valider votre commande</button>
+        </form>
     </div>
 </div>
+<router-outlet></router-outlet>
