@@ -1,6 +1,6 @@
 enum ApiUrl {
   // Local config =============================================
-  NOTIFICATION_URL = 'https://app-99741378-9020-4ab8-ba5d-a3a3928eb833.cleverapps.io',
+  NOTIFICATION_URL = 'https://app-c3856679-7c0d-4765-9e3a-f2ffa3f53188.cleverapps.io',
 
   // Prod config =============================================
   // NOTIFICATION_URL = ,
