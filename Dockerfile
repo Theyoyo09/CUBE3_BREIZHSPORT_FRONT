@@ -1,14 +1,18 @@
-FROM node:alpine
+# Stage 1: Build the Angular application
+FROM node:latest as build
 
-EXPOSE 8080
-EXPOSE 4201
+WORKDIR /app
 
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-
-RUN npm install -g @angular/cli
-
+COPY package.json package-lock.json ./
 RUN npm install
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+COPY . .
+RUN npm run build -- --output-path=./dist/out
+
+# Stage 2: Serve the built Angular application using Nginx
+FROM nginx:alpine
+
+COPY --from=build /app/dist/out /usr/share/nginx/html
+
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
