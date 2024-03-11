@@ -1,7 +1,7 @@
 FROM node:alpine
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
+EXPOSE 4201
 
 WORKDIR /usr/src/app
 
