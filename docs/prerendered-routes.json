@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/home",
+    "/login",
+    "/mention_legales",
+    "/panier",
+    "/profil"
+  ]
+}
